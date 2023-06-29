@@ -1,0 +1,88 @@
+<div class="row mt-3">
+    <div class="col">
+        <h4 class="fw-bold  " ><i class="fa-solid fa-user-plus"></i>Update Contact Page
+            
+        </h4>
+    </div>
+
+    <p style="text-align: justify;">hi welcome to cintact manager ,will be helping to fing contacs from databse,so
+        kindly type your conatct
+        here ,hi welcome to cintact manager ,will be helping to fing contacs from databse,so kindly type your
+        conatct here hi welcome to cintact manager ,will be helping to fing contacs from databse,so kindly type
+        your conatct hereconatct here hi welcome to cintact manager ,will be helping to fing contacs from databse,so
+        kindly type
+        your conatct here your conatct hereconatct here hi welcome to cintact manager ,will be helping to fing
+        contacs from databse,so kindly type
+        your conatct here </p>
+
+</div>
+
+<!-- input boxes -->
+<div id="inputbox" >
+
+    <div class="row">
+        <div class="col-6 ms-4">
+    
+    <form #editcontactsform="ngForm" class="border rounded p-2" >
+    
+        <input name="id" #id="ngModel" [(ngModel)]="contact.id" placeholder="Contact Id" class="form-control mb-1" required  type="text">
+        <div *ngIf="id.invalid && id.touched" >please eneter valid details</div>
+        <input name="name" #name="ngModel" [(ngModel)]="contact.name" placeholder="Contact Name" class="form-control mb-1 " pattern="[a-zA-Z ]*" required type="text">
+        <div>
+            <div *ngIf="name.invalid && name.touched" >please eneter valid details</div>
+        </div>
+        <input name="photo" #photo="ngModel" [(ngModel)]="contact.photo" placeholder="Contact Image URL"  class="form-control mb-1 " required type="text">
+        <div *ngIf="photo.invalid && photo.touched" >please type valid details</div>
+        <input name="mobile" #mobile="ngModel" [(ngModel)]="contact.mobile" placeholder="Contact Mobile" class="form-control mb-1 " minlength="10" maxlength="10" required pattern="[0-9]*" type="text">
+        <div *ngIf="mobile.invalid && mobile.touched" >please type valid details</div>
+        <input name="email" #email="ngModel" [(ngModel)]="contact.email" placeholder="Contact Email" class="form-control mb-1 " email required type="text">
+        <div *ngIf="email.invalid && email.touched" >please type valid details</div>
+        <input name="company" #company="ngModel" [(ngModel)]="contact.company" placeholder="Company Name" class="form-control mb-1 " required type="text">
+        <div *ngIf="company.invalid && company.touched" >please type valid details</div>
+        <input name="title" #title="ngModel" [(ngModel)]="contact.title" placeholder="Contact Title" class="form-control mb-1 " required type="text">
+        <div *ngIf="title.invalid && title.touched" >please type valid details</div>
+        <div>
+        <select name="groupId" #groupid="ngModel" [(ngModel)]="contact.groupId" pattern="[0-9]*" class="form-control mb-1" >
+            <option disabled selected hidden ></option>
+             <option *ngFor="let group of groups" [value]="group.id">{{group.name}}</option> 
+           
+        </select>
+        <div *ngIf="groupid.invalid && groupid.touched" >please type valid details</div>
+    </div>
+    
+    
+    <div class="d-flex justify-content-end mt-2" >
+        <button (click)="update(contact.id)" [disabled]="editcontactsform.invalid" class="btn btn-success  " >Update</button>
+     <a class="btn btn-warning ms-3 align-items-center" routerLink="">Close</a>
+    </div>
+    
+    
+    
+    
+    </form>
+    
+        </div>
+        <div class="col d-flex justify-content-center ">
+            <!-- card -->
+            <div [hidden]="editcontactsform.invalid" class="card" style="width: 18rem;">
+               
+                <div class="card-body text-center text-align-center ">
+                    <img width="100px" height="100px" [src]="contact.photo"  >
+                  <h6 class="card-title">Contact Name:{{contact.name}}</h6>
+               <p>Id:{{contact.id}}</p>
+               <p>Mobile:{{contact.mobile}}</p>
+               <p>Email:{{contact.email}}</p>
+               <p>Company:{{contact.company}}</p>
+               <p>title:{{contact.title}}</p>
+               <p>Group:{{contact.groupId}}</p>
+                
+              </div>
+            <!-- card ends -->
+            
+        </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
