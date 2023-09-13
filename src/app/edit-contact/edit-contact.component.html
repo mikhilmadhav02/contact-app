@@ -1,16 +1,15 @@
-<div class="row mt-3">
+<div style="margin-bottom:10px;" class="row mt-3">
     <div class="col">
-        <h4 class="fw-bold  " ><i class="fa-solid fa-user-plus"></i>Update Contact Page
+        <h4 style="margin-left:10px;" class="fw-bold  " ><i class="fa-solid fa-user-plus"></i>Update Contact Page
             
         </h4>
     </div>
 
-    <p style="text-align: justify;">hi welcome to cintact manager ,will be helping to fing contacs from databse,so
+    <p style="margin-left: 10px; text-align: justify;">hi welcome to cintact manager ,will be helping to fing contacs from databse,so
         kindly type your conatct
         here ,hi welcome to cintact manager ,will be helping to fing contacs from databse,so kindly type your
         conatct here hi welcome to cintact manager ,will be helping to fing contacs from databse,so kindly type
-        your conatct hereconatct here hi welcome to cintact manager ,will be helping to fing contacs from databse,so
-        kindly type
+        
         your conatct here your conatct hereconatct here hi welcome to cintact manager ,will be helping to fing
         contacs from databse,so kindly type
         your conatct here </p>
@@ -64,17 +63,17 @@
         </div>
         <div class="col d-flex justify-content-center ">
             <!-- card -->
-            <div [hidden]="editcontactsform.invalid" class="card" style="width: 18rem;">
+            <div [hidden]="editcontactsform.invalid" class="card"  style="height:380px; width: 18rem;">
                
                 <div class="card-body text-center text-align-center ">
-                    <img width="100px" height="100px" [src]="contact.photo"  >
+                    <img style="margin-top:-10px;margin-bottom:15px;" width="150px" height="140px" [src]="contact.photo"  >
                   <h6 class="card-title">Contact Name:{{contact.name}}</h6>
                <p>Id:{{contact.id}}</p>
-               <p>Mobile:{{contact.mobile}}</p>
-               <p>Email:{{contact.email}}</p>
-               <p>Company:{{contact.company}}</p>
-               <p>title:{{contact.title}}</p>
-               <p>Group:{{contact.groupId}}</p>
+               <p style="margin-top:-7px;">Mobile:{{contact.mobile}}</p>
+               <p style="margin-top:-7px;" >Email:{{contact.email}}</p>
+               <p style="margin-top:-7px;" >Company:{{contact.company}}</p>
+               <p style="margin-top:-7px;" >title:{{contact.title}}</p>
+               <p style="margin-top:-7px;" >Group:{{contact.groupId}}</p>
                 
               </div>
             <!-- card ends -->
